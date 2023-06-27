@@ -70,9 +70,11 @@ For more information on the importance of a professional README for your reposit
 
 ### Key Features <a name="key-features"></a>
 
-- **Class Hierarchy and Inheritance:** The application showcases the concept of class hierarchy and inheritance in object-oriented programming. It demonstrates how the Student and Teacher classes inherit from the base Person class, inheriting its attributes and methods while also adding their own specific attributes and behaviors. This feature allows for code reuse, modularity, and the organization of related classes.
-- **Attribute Access and Modification:**  The Person class provides getter and setter methods for accessing and modifying attributes such as name and age. This feature enables users to retrieve and update the information associated with a person object, allowing for dynamic manipulation of the object's state.
-- **Permission and Services Check:**  The application includes a can_use_services? method that determines if a person can use certain services based on their age or parental permission. It showcases the use of conditional logic to make decisions and provide access control. This feature allows for the implementation of customized permission rules and restrictions based on the person's age or specific circumstances.
+- **Decorator Design Pattern:** The project utilizes the Decorator design pattern to enhance and modify the behavior of objects dynamically. By applying decorators, you can add new functionality or modify existing behavior without altering the original object's structure. This pattern promotes flexibility and extensibility in the project's design.
+
+- **Name Decoration:** The Decorator pattern is specifically used to decorate names in this project. It demonstrates how multiple decorators can be applied to a base object, such as a person's name, to provide additional features or transformations. In this case, the project showcases two decorators, including the CapitalizeDecorator and TrimmerDecorator, which respectively capitalize and trim the names.
+
+- **Modular and Extensible Design:** The project's design follows a modular and extensible approach. By separating concerns into different classes and files, such as the Person class, Decorator class, and specific decorator implementations, the codebase becomes more organized and maintainable. This design allows for easy addition of new decorators or modifications to existing ones, promoting code reusability and scalability.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -135,8 +137,6 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-
-- Use the "Decorator" design pattern.
 - Set up associations.
 - Add basic UI.
 - Refactor your code.
