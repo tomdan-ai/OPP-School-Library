@@ -1,12 +1,12 @@
-require_relative 'person'
+require_relative 'nameable'
 
-class Decorator < Person
-  def initialize(person)
-    super(person.id, person.age, parent_permission: person.parent_permission, name: person.name)
-    @person = person
+class Decorator < Nameable
+  def initialize(nameable)
+    super()
+    @nameable = nameable
   end
 
   def correct_name
-    @person.correct_name
+    @nameable.correct_name
   end
 end
