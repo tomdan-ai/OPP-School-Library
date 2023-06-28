@@ -1,13 +1,19 @@
+require 'date'
 require_relative 'person'
 require_relative 'students'
 require_relative 'teachers'
+require_relative 'classroom'
+require_relative 'books'
+require_relative 'rental'
 require_relative 'capitalize_decorator'
 require_relative 'trimmer_decorator'
+
+classroom = Classroom.new('Class A') # Create a Classroom instance
 
 person = Person.new(1, 20)
 puts person.can_use_services? # true
 
-student = Student.new(2, 16, 'Class A')
+student = Student.new(2, 16, classroom) # Pass the classroom instance
 puts student.can_use_services? # true
 puts student.play_hooky # ¯\(ツ)/¯
 
