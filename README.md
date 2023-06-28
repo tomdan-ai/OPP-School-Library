@@ -70,11 +70,11 @@ For more information on the importance of a professional README for your reposit
 
 ### Key Features <a name="key-features"></a>
 
-- **Decorator Design Pattern:** The project utilizes the Decorator design pattern to enhance and modify the behavior of objects dynamically. By applying decorators, you can add new functionality or modify existing behavior without altering the original object's structure. This pattern promotes flexibility and extensibility in the project's design.
+- **Classroom-Student Relationship:** The project implements a has-many/belongs-to relationship between the Classroom and Student classes. This association allows a classroom to have multiple students, and a student belongs to a specific classroom. When adding a student to a classroom, the association automatically sets the classroom for the student. Similarly, when setting the classroom for a student, the student is also added to the classroom's list of students.
 
-- **Name Decoration:** The Decorator pattern is specifically used to decorate names in this project. It demonstrates how multiple decorators can be applied to a base object, such as a person's name, to provide additional features or transformations. In this case, the project showcases two decorators, including the CapitalizeDecorator and TrimmerDecorator, which respectively capitalize and trim the names.
+- **Book-Rental Relationship:** The project establishes a has-many/belongs-to relationship between the Book and Rental classes. This association enables a book to have multiple rentals, allowing multiple people to rent the same book over time. On the other side, a rental belongs to a specific book. This relationship is implemented using the intermediate class Rental.
 
-- **Modular and Extensible Design:** The project's design follows a modular and extensible approach. By separating concerns into different classes and files, such as the Person class, Decorator class, and specific decorator implementations, the codebase becomes more organized and maintainable. This design allows for easy addition of new decorators or modifications to existing ones, promoting code reusability and scalability.
+- **Person-Book Relationship:** The project implements a many-to-many relationship between the Person and Book classes using the intermediate class Rental. This association allows a person to have multiple rentals, meaning they can borrow multiple books. Similarly, a book can have multiple rentals, representing different instances when the book was borrowed by different people. The Rental class acts as a bridge between Person and Book, facilitating the many-to-many relationship.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,7 +137,6 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Set up associations.
 - Add basic UI.
 - Refactor your code.
 - Preserve data.
