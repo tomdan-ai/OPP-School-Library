@@ -11,4 +11,14 @@ class Person
   def can_use_services?
     @age >= 18 || @parent_permission
   end
+
+  def to_h
+    {
+      'type' => self.class.to_s,
+      'id' => @id,
+      'age' => @age,
+      'parent_permission' => @parent_permission,
+      'name' => @name
+    }
+  end
 end

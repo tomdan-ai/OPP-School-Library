@@ -6,4 +6,13 @@ class Rental
     @book = book
     @person = person
   end
+
+  def to_h
+    {
+      'type' => 'Rental',
+      'date' => @date,
+      'book_title' => @book.title,
+      'person_id' => @person.id
+    }
+  end
 end

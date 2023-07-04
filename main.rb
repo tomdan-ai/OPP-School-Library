@@ -1,4 +1,11 @@
 require_relative 'app'
+require_relative 'teachers'
+require_relative 'students'
+require_relative 'books'
+require_relative 'rental'
+require_relative 'classroom'
+require_relative 'trimmer_decorator'
+require_relative 'capitalize_decorator'
 
 def handle_menu_choice(choice, app)
   menu_options = {
@@ -9,7 +16,7 @@ def handle_menu_choice(choice, app)
     5 => { description: 'Create a book', action: -> { app.create_book } },
     6 => { description: 'Create a rental', action: -> { app.create_rental } },
     7 => { description: 'List rentals for a person', action: -> { app.list_rentals_for_person } },
-    8 => { description: 'Quit', action: -> { exit_app } }
+    8 => { description: 'Quit', action: -> { exit_app(app) } }
   }
 
   option = menu_options[choice]
@@ -21,13 +28,15 @@ def handle_menu_choice(choice, app)
   end
 end
 
-def exit_app
+def exit_app(app)
+  app.save_all_data
   puts 'Exiting the app. Goodbye!'
   exit
 end
 
 def main
   app = App.new
+  app.load_all_data
 
   loop do
     puts "\n========== OOP SCHOOL LIBRARY =========="
