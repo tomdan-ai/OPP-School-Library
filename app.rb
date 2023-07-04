@@ -1,9 +1,10 @@
 require_relative 'classroom'
 require_relative 'person'
 require_relative 'students'
-require_relative 'teachers' # Updated: Added 'teacher' file
+require_relative 'teachers'
 require_relative 'books'
 require_relative 'rental'
+require 'json'
 
 class App
   attr_accessor :classrooms, :people, :books, :rentals
@@ -106,5 +107,49 @@ class App
     rentals.each do |rental|
       puts "Date: #{rental.date}, Book Title: #{rental.book.title}"
     end
+  end
+
+  def save_data_to_json(file_path, data)
+    File.open(file_path, 'w') do |file|
+      json_data = JSON.generate(data.map(&:to_h))
+      file.write(json_data)
+    end
+  end
+
+  def load_data_from_json(file_path)
+    return [] unless File.exist?(file_path)
+
+    json_data = File.read(file_path)
+    json_array = JSON.parse(json_data)
+    json_array.map { |json| from_json(json) }
+  end
+
+  def from_json(json)
+    case json['type']
+    when 'Teacher'
+      Teacher.new(json['id'], json['age'], json['specialization'], name: json['name'])
+    when 'Student'
+      Student.new(json['id'], json['age'], nil, parent_permission: json['parent_permission'], name: json['name'])
+    when 'Book'
+      Book.new(json['title'], json['author'])
+    when 'Rental'
+      book = @books.find { |b| b.title == json['book_title'] }
+      person = @people.find { |p| p.id == json['person_id'] }
+      Rental.new(json['date'], book, person)
+    end
+  end
+
+  def load_all_data
+    @classrooms = load_data_from_json('classrooms.json')
+    @people = load_data_from_json('people.json')
+    @books = load_data_from_json('books.json')
+    @rentals = load_data_from_json('rentals.json')
+  end
+
+  def save_all_data
+    save_data_to_json('classrooms.json', @classrooms)
+    save_data_to_json('people.json', @people)
+    save_data_to_json('books.json', @books)
+    save_data_to_json('rentals.json', @rentals)
   end
 end
