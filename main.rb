@@ -30,7 +30,7 @@ def main
   app = App.new
 
   loop do
-    puts "\n========== Library Console App =========="
+    puts "\n========== OOP SCHOOL LIBRARY =========="
     puts '+--------------------------------------+'
     puts '|              MAIN MENU               |'
     puts '+--------------------------------------+'
