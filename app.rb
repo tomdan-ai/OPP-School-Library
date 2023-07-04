@@ -140,14 +140,12 @@ class App
   end
 
   def load_all_data
-    @classrooms = load_data_from_json('classrooms.json')
     @people = load_data_from_json('people.json')
     @books = load_data_from_json('books.json')
     @rentals = load_data_from_json('rentals.json')
   end
 
   def save_all_data
-    save_data_to_json('classrooms.json', @classrooms)
     save_data_to_json('people.json', @people)
     save_data_to_json('books.json', @books)
     save_data_to_json('rentals.json', @rentals)

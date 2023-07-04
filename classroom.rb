@@ -10,11 +10,4 @@ class Classroom
     @students << student unless @students.include?(student)
     student.classroom = self
   end
-
-  def to_h
-    {
-      'type' => 'Classroom',
-      'label' => @label
-    }
-  end
 end

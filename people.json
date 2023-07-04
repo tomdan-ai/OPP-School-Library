@@ -1,1 +1,1 @@
-[]
+[{"type":"Teacher","id":1,"age":78,"parent_permission":true,"name":"Ernest Korir","specialization":"Web developere"},{"type":"Student","id":2,"age":23,"parent_permission":true,"name":"Tom Daniel"},{"type":"Student","id":3,"age":45,"parent_permission":true,"name":"Henry"}]
