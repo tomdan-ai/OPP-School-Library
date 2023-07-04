@@ -1,7 +1,7 @@
 require_relative 'classroom'
 require_relative 'person'
 require_relative 'students'
-require_relative 'teachers'  # Updated: Added 'teacher' file
+require_relative 'teachers' # Updated: Added 'teacher' file
 require_relative 'books'
 require_relative 'rental'
 

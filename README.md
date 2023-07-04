@@ -131,6 +131,11 @@ To run the project, execute the following command:
 - Twitter: [@kvngWebstar](https://twitter.com/tomudoh1)
 - LinkedIn : [Tom Udoh](https://linkedin.com/in/tomudoh)
 
+👤 **Ernest Korir**
+
+- GitHub: [@ernestkorir](https://github.com/ernestkorir)
+- LinkedIn: [Ernest korir](https://www.linkedin.com/in/ernest-korir/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
