@@ -1,5 +1,5 @@
 class Person
-  attr_reader :id, :age, :parent_permission, :name
+  attr_reader :id, :age, :parent_permission, :name, :rentals
 
   def initialize(id, age, parent_permission: true, name: 'Unknown')
     @id = id
@@ -18,10 +18,6 @@ class Person
     @rentals << rental
   end
 
-  def rentals
-    @rentals
-  end
-
   def to_h
     {
       'type' => self.class.to_s,
@@ -32,4 +28,3 @@ class Person
     }
   end
 end
-

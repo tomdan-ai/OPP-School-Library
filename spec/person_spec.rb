@@ -8,12 +8,12 @@ RSpec.describe Person do
     end
 
     it 'returns true if the person is underage but has parent permission' do
-        person = Person.new(16, 16, parent_permission: true) # Provide the parent_permission parameter
+      person = Person.new(16, 16, parent_permission: true) # Provide the parent_permission parameter
       expect(person.can_use_services?).to eq(true)
     end
 
     it 'returns false if the person is underage and has no parent permission' do
-        person = Person.new(16, 16, parent_permission: false) # Provide the parent_permission parameter
+      person = Person.new(16, 16, parent_permission: false) # Provide the parent_permission parameter
       expect(person.can_use_services?).to eq(false)
     end
   end
