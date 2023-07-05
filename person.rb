@@ -6,10 +6,20 @@ class Person
     @age = age
     @parent_permission = parent_permission
     @name = name
+    @rentals = []
   end
 
   def can_use_services?
     @age >= 18 || @parent_permission
+  end
+
+  def add_rentals(rental)
+    rental.person = self
+    @rentals << rental
+  end
+
+  def rentals
+    @rentals
   end
 
   def to_h
@@ -22,3 +32,4 @@ class Person
     }
   end
 end
+
