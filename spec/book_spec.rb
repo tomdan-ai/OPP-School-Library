@@ -1,13 +1,31 @@
-require_relative '../book'
+require 'rspec'
+require_relative '../books'
+require_relative '../person'
+require_relative '../rental'
 
-RSpec.describe Book do
-  describe '#add_rentals' do
-    it 'adds a rental to the book' do
-      book = Book.new('The Great Gatsby', 'F. Scott Fitzgerald')
-      rental = double('rental')
-      expect(rental).to receive(:book=).with(book)
-      book.add_rentals(rental)
-      expect(book.rentals).to include(rental)
+describe Book do
+  let(:book) { Book.new('Title', 'Author') }
+  let(:person) { Person.new('123', 20) }
+
+  describe '#initialize' do
+    it 'sets the title and author' do
+      expect(book.title).to eq 'Title'
+      expect(book.author).to eq 'Author'
+    end
+
+    it 'initializes an empty rentals array' do
+      expect(book.rentals).to be_empty
+    end
+  end
+
+  describe '#to_h' do
+    it 'returns a hash representation of the book' do
+      expected_hash = {
+        'type' => 'Book',
+        'title' => 'Title',
+        'author' => 'Author'
+      }
+      expect(book.to_h).to eq expected_hash
     end
   end
 end
